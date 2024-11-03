@@ -1,0 +1,67 @@
+body{
+  margin: 0;
+  background: #303030;
+  color: white;
+}
+.button{
+  margin: 3px;
+  text-align: center;
+  font-weight: 500;
+}
+.navbar{
+  background: white;
+  padding: 20px;
+}
+.navbar a{
+  margin-right: 10px;
+  text-decoration-line: none; /*링크 밑줄 없애줌*/
+  color: black;
+}
+.logo{
+  font-weight: bold;
+}
+.list-bg{
+  background: rgb(249, 250, 255);
+  padding: 10px;
+}
+.list-item{
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 5px;
+  box-shadow: rgb(224, 224, 224) 0px 2px 4px 0px;
+
+  opacity: 1; /**/
+  transition: all 1s; /*CSS스타일이 바뀔때 1초에 걸쳐 변경해 달라*/
+}
+.list-item a{ /*CSS에서는 Link태그도 a취급*/
+  color: black;
+  font-size: 20px;
+  font-weight: 800;
+  text-decoration: none;
+  margin: 0;
+}
+.list-item p {
+  color: gray;
+  margin: 5px 0px;
+}
+.p-20{
+  padding: 20px;
+}
+.p-20 input{
+  box-sizing: border-box;
+  padding: 10px;
+  display: block;
+  margin-bottom: 10px;
+}
+.p-20 a{
+  padding-bottom: 10px;
+  display: flex;
+}
+.sign-up{
+  display: flex;
+  align-items: center;
+}
+.Login-box{
+  float: right;
+}
