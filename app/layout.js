@@ -1,10 +1,6 @@
 import { Inter } from "next/font/google";
-import { authOptions } from '@/pages/api/auth/[...nextauth]';
-import { getServerSession } from 'next-auth';
 import "./globals.css";
-import Link from 'next/link'
-import LoginBtn from './LoginBtn';
-import LogoutBtn from './LogoutBtn';
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,8 +10,6 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-  let session = await getServerSession(authOptions) //서버컴포넌트에서만 사용가능, 로그인한 회원의 정보를 보여줌
-  console.log(session)
 
   return (
     <html lang="en">
@@ -26,8 +20,6 @@ export default async function RootLayout({ children }) {
           <Link href="/list">List</Link>
           <span className='Login-box'>
             {
-              session ?
-              <span style={{color : 'black'}}>{session.user.name}<LogoutBtn/></span> : <LoginBtn/>
             }
           </span>
         </div>

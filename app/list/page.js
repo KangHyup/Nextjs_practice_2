@@ -6,21 +6,19 @@ export default async function List(){
     const db = client.db('forum')
     let result  = await db.collection('post').find().toArray()
 
-    console.log(result)
     return(
-
-        result.map((obj) => {
-            if(obj.title !=""){ //제목이 공백이 아니라면
-                return(
-                    <div className='list-bg'>
-                        <div className='list-item'>
-                            <h4>{obj.title}</h4>
-                            <p>{obj.content}</p>
-                        </div>
-                    </div>
-                )
-
-            }
-        })
+        <div className='list-bg'>
+        {
+            result.map((obj, i) => {
+                if(obj.title !="") //제목이 공백이 아니라면
+                    return(
+                            <div className='list-item' key = {i}>
+                                <h4>{obj.title}</h4>
+                                <p>{obj.content}</p>
+                            </div>
+                            )
+            })
+        }
+        </div>
     )
 }
