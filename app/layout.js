@@ -6,8 +6,6 @@ import Link from 'next/link'
 import LoginBtn from './LoginBtn';
 import LogoutBtn from './LogoutBtn';
 
-
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {

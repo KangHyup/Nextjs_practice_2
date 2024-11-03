@@ -26,6 +26,7 @@ body{
 }
 .list-item{
   background: white;
+  color: black;
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 5px;
