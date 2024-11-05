@@ -1,16 +1,14 @@
-
-
-import { MongoClient } from 'mongodb'
-const url = process.env.MONGODB_URL
-const options = { useNewUrlParser: true }
-let connectDB
+import { MongoClient } from 'mongodb';
+const url = process.env.MONGODB_URL;
+let connectDB;
 
 if (process.env.NODE_ENV === 'development') {
   if (!global._mongo) {
-    global._mongo = new MongoClient(url, options).connect()
+    global._mongo = new MongoClient(url).connect(); // 옵션 제거
   }
-  connectDB = global._mongo
+  connectDB = global._mongo;
 } else {
-  connectDB = new MongoClient(url, options).connect() //여기가 핵심(나머지는 개발 단계를 수월하게 하기 위함)
+  connectDB = new MongoClient(url).connect(); // 옵션 제거
 }
-export { connectDB }
+
+export { connectDB };
